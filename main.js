@@ -30,30 +30,30 @@
       actualizarLista();
     }
 
-function actualizarLista() {
-  const ul = document.getElementById("listaSeleccionados");
-  const totalEl = document.getElementById("totalGeneral");
-  ul.innerHTML = "";
+    function actualizarLista() {
+      const ul = document.getElementById("listaSeleccionados");
+      const totalEl = document.getElementById("totalGeneral");
+      ul.innerHTML = "";
 
-  let total = 0;
+      let total = 0;
 
-  seleccionados.forEach((prod, index) => {
-    const subtotal = prod.precio * prod.cantidad;
-    total += subtotal;
+      seleccionados.forEach((prod, index) => {
+        const subtotal = prod.precio * prod.cantidad;
+        total += subtotal;
 
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${prod.nombre} x${prod.cantidad} - $${subtotal}
-      <button onclick="restarProducto(${index})">−</button>
-      <button onclick="sumarProducto(${index})" id="suma">+</button>
-      <button onclick="eliminarProducto(${index})">Quitar</button>
-    `;
-    ul.appendChild(li);
-  });
+        const li = document.createElement("li");
+        li.innerHTML = `
+          ${prod.nombre} x${prod.cantidad} - $${subtotal}
+          <button onclick="restarProducto(${index})">−</button>
+          <button onclick="sumarProducto(${index})" id="suma">+</button>
+          <button onclick="eliminarProducto(${index})">Quitar</button>
+        `;
+        ul.appendChild(li);
+      });
 
-  totalEl.textContent = `Total: $${total}`;
-  actualizarLinkWhatsapp();
-}
+      totalEl.textContent = `Total: $${total}`;
+      actualizarLinkWhatsapp();
+    }
 
     function actualizarLinkWhatsapp() {
       const mensajeBase = "¡Hola, me gustaría realizar el siguiente encargue!%0A";
