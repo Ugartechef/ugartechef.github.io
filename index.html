@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UGARTECHEF - Pedido Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+  <header>
+    <img src="imagenes/logoTest.png" alt="Logo" class="logo" id="logo">
+    <h1>UGARTECHEF</h1>
+    <p>¡Resolvemos tus almuerzos y cenas de todos los días!</p>
+  </header>
+
+  <div class="productos-grid">
+    <div class="producto" onclick="agregarProducto('Ravioles de Osobuco', 13500)">
+      <img src="imagenes/Osobuco.webp" alt="Ravioles">
+      <h3>RAVIOLES DE OSOBUCO</h3>
+      <p>12 unidades hechos con:</p>
+      <p>Osobuco al vino, morrón, cebolla, zanahoria</p>
+      <strong>$13.500</strong>
+    </div>
+
+    <div class="producto" onclick="agregarProducto('Ravioles de Calabaza', 10000)">
+      <img src="imagenes/tl.webp" alt="Ravioles">
+      <h3>RAVIOLES DE CALABAZA</h3>
+      <p>12 unidades hechos con:</p>
+      <p>Calabaza, queso y cebolla caramelizada</p>
+      <strong>$10.000</strong>
+    </div>
+  </div>
+
+  <div class="seleccionados">
+    <h2>Tu pedido</h2>
+    <ul id="listaSeleccionados"></ul>
+    <div class="total" id="totalGeneral">Total: $0</div>
+  </div>
+
+  <div class="whatsapp-button">
+    <a id="whatsappLink" href="#" target="_blank">Enviar por WhatsApp</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
