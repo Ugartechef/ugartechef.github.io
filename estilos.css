@@ -50,6 +50,7 @@
     #instrucciones {
       font-size: 14px;
       color: var(--negro);
+      margin: 0%;
     }
 
     .productos-grid {
