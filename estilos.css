@@ -47,6 +47,11 @@
       height: 100px;
     }
 
+    #instrucciones {
+      font-size: 14px;
+      color: var(--negro);
+    }
+
     .productos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
