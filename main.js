@@ -1,3 +1,4 @@
+
     const seleccionados = [];
 
     function agregarProducto(nombre, precio) {
