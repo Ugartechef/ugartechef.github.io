@@ -64,3 +64,4 @@
       const url = `https://wa.me/${numero}?text=${mensaje}`;
       document.getElementById("whatsappLink").href = url;
     }
+    
