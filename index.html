@@ -59,9 +59,18 @@
     <div class="total" id="totalGeneral">Total: $0</div>
   </div>
 
-  <div class="whatsapp-button">
-    <a id="whatsappLink" href="#" target="_blank">Enviar por WhatsApp</a>
+<div class="botones">
+  <div class="boton-flex">
+    <div class="whatsapp-button">
+      <a id="whatsappLink" href="#" target="_blank">Enviar por WhatsApp</a>
+    </div>
+    <div class="descuento-button">
+      <input type="text" id="codigoDescuento" placeholder="Código de descuento">
+      <button onclick="aplicarDescuento()">Aplicar</button>
+      <span id="mensajeDescuento"></span>
+    </div>
   </div>
+</div>
 
   <script src="main.js"></script>
 </body>

@@ -180,6 +180,64 @@
       box-shadow: 0 4px 16px rgba(37,211,102,0.25);
     }
 
+    .boton-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .descuento-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #fffbe6;
+      padding: 8px 16px;
+      border-radius: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .descuento-button input[type="text"]{
+      padding: 8px 12px;
+      border: 1px solid #ffe066;
+      border-radius: 20px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+      transition: border 0.2s;
+    }
+
+    .descuento-button input[type="text"]:focus {
+      border: 1.5px solid #ffd700;
+    }
+
+    .descuento-button button {
+     background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%);
+     color: #333;
+     border: none;
+     border-radius: 20px;
+     padding: 8px 18px;
+     font-size: 16px;
+     font-weight: bold;
+     cursor: pointer;
+     box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+     transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .descuento-button button:hover {
+      background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+      box-shadow: 0 4px 16px rgba(255,215,0,0.18);
+    }
+
+    #mensajeDescuento {
+     margin-left: 10px;
+     font-size: 15px;
+     font-weight: 600;
+    }
+
+
 @media (max-width: 600px) {
   .productos-grid {
     grid-template-columns: 1fr;
@@ -220,5 +278,16 @@
   #suma {
     padding: 10px 16px;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .boton-flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .descuento-button {
+    width: 100%;
+    justify-content: center;
   }
 }
