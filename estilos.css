@@ -165,7 +165,7 @@
     .envio-opcion input[type="checkbox"] {
       width: 28px;
       height: 28px;
-      accent-color: #ffd700; /* Amarillo suave */
+      accent-color: #ffd700;
       border-radius: 8px;
       border: 2px solid #ffe066;
       transition: box-shadow 0.2s;
