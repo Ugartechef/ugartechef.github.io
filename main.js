@@ -65,13 +65,22 @@
         mensaje += `${prod.nombre} x${prod.cantidad} - $${subtotal}%0A`;
       });
 
+      const envioCheckbox = document.getElementById("conEnvio");
+      let envio = 0;
+      if (envioCheckbox && envioCheckbox.checked) {
+        envio = 1000;
+        mensaje += `%0AEnvío a domicilio: $${envio}%0A`;
+      } else {
+        mensaje += `%0AEnvío a domicilio: Lo retiro%0A`;
+      }
+
       let totalConDescuento = total;
       if (descuento > 0) {
         totalConDescuento = Math.round(total * (1 - descuento));
         mensaje += `%0ADescuento aplicado (${Math.round(descuento * 100)}%): $-${total - totalConDescuento}%0A`;
-        mensaje += `Total final: $${totalConDescuento}`;
+        mensaje += `Total final: $${totalConDescuento + envio}`;
       } else {
-        mensaje += `%0ATotal: $${total}`;
+        mensaje += `%0ATotal: $${total + envio}`;
       }
       const whatsappLink = document.getElementById("whatsappLink");
       whatsappLink.href = `https://wa.me/542323354483?text=${mensaje}`;
@@ -93,6 +102,10 @@
       descuento = 0.10;
       mensaje.textContent = '¡Descuento aplicado!';
       mensaje.style.color = 'green';
+    } else if (codigo === '') {
+      descuento = 0;
+      mensaje.textContent = 'Debes ingresar un código';
+      mensaje.style.color = 'red';
     } else {
       descuento = 0;
       mensaje.textContent = 'Código inválido';
@@ -122,12 +135,30 @@
       ul.appendChild(li);
     });
 
+    const envioCheckbox = document.getElementById("conEnvio");
+    let envio = 0;
+    if (envioCheckbox && envioCheckbox.checked) {
+      envio = 1000;
+    }
+
+    
+
     let totalConDescuento = total;
     if (descuento > 0) {
       totalConDescuento = Math.round(total * (1 - descuento));
-      totalEl.textContent = `Total: $${totalConDescuento} (descuento aplicado)`;
-    } else {
-      totalEl.textContent = `Total: $${total}`;
     }
+
+    let totalFinal = totalConDescuento + envio;
+
+    if (descuento > 0 && envio > 0) {
+      totalEl.textContent = `Total: $${totalFinal} (descuento y envío incluidos)`;
+    } else if (descuento > 0) {
+      totalEl.textContent = `Total: $${totalFinal} (descuento incluido)`;
+    } else if (envio > 0) {
+      totalEl.textContent = `Total: $${totalFinal} (envío incluido)`;
+    } else {
+      totalEl.textContent = `Total: $${totalFinal}`;
+    }
+
     actualizarLinkWhatsapp();
   }

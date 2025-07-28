@@ -15,13 +15,14 @@
     <h1>UGARTECHEF</h1>
     <p>¡Resolvemos tus almuerzos y cenas de todos los días!</p>
     <p id="instrucciones">Para utilizar el sistema de pedidos, simplemente haz clic en el producto que deseas agregar.</p>
-    <p id="instrucciones">Luego debajo en "Tu pedido" podrás ver los productos seleccionados y sumar la cantidad que quieras.</p>
+    <p id="instrucciones">Luego debajo en "Tu pedido" podrás ver los productos seleccionados y sumar la cantidad que quieras,</p>
+    <p id="instrucciones">si deseas agregar un envío a domicilio, marca la opción correspondiente.</p>
     <p id="instrucciones">Cuando hayas terminado, hacé clic en el botón de WhatsApp para enviar tu pedido.</p>
   </header>
 
   <div class="productos-grid">
     <div class="producto" onclick="agregarProducto('sorrentinos de Osobuco', 13500)">
-      <img src="Osobuco.webp" alt="Ravioles">
+      <img src="Osobuco.webp" alt="Ravioles" id="imagen">
       <h3>SORRENTINOS DE OSOBUCO</h3>
       <p>15 unidades hechos con:</p>
       <p>Osobuco al vino, morrón, cebolla, zanahoria</p>
@@ -29,7 +30,7 @@
     </div>
 
     <div class="producto" onclick="agregarProducto('sorrentinos de Calabaza', 10000)">
-      <img src="tl.webp" alt="Ravioles">
+      <img src="tl.webp" alt="Ravioles" id="imagen">
       <h3>SORRENTINOS DE CALABAZA</h3>
       <p>15 unidades hechos con:</p>
       <p>Calabaza, queso y cebolla caramelizada</p>
@@ -37,7 +38,7 @@
     </div>
 
     <div class="producto" onclick="agregarProducto('Wrap de Pollo', 13500)">
-      <img src="polllo.webp" alt="Wrap de Pollo">
+      <img src="polllo.webp" alt="Wrap de Pollo" id="imagen">
       <h3>WRAP DE POLLO AL VERDEO</h3>
       <p>2 unidades hechos con:</p>
       <p>Pollo, verdeo, crema</p>
@@ -45,7 +46,7 @@
     </div>
 
     <div class="producto" onclick="agregarProducto('Wrap de Carne', 14500)">
-      <img src="Carne.png" alt="Wrap de Carne">
+      <img src="Carne.png" alt="Wrap de Carne" id="imagen">
       <h3>WRAP DE CARNE</h3>
       <p>2 unidades hechos con:</p>
       <p>Carne vacuna, zanahoria, cebolla y ají</p>
@@ -56,6 +57,10 @@
   <div class="seleccionados">
     <h2>Tu pedido</h2>
     <ul id="listaSeleccionados"></ul>
+    <div class="envio-opcion">
+      <input type="checkbox" id="conEnvio" onchange="actualizarLista()">
+      <label for="conEnvio">Quiero envío a domicilio (+$1000)</label>
+    </div>
     <div class="total" id="totalGeneral">Total: $0</div>
   </div>
 
