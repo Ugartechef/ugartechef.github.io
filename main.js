@@ -162,3 +162,50 @@
 
     actualizarLinkWhatsapp();
   }
+
+
+    const targetISO = '2025-10-01T00:00:00-03:00';
+    const target = new Date(targetISO);
+
+    const elDays = document.getElementById('days');
+    const elHours = document.getElementById('hours');
+    const elMinutes = document.getElementById('minutes');
+    const elSeconds = document.getElementById('seconds');
+    const message = document.getElementById('message');
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function update(){
+      const now = new Date();
+      const diff = target.getTime() - now.getTime();
+
+      if (diff <= 0) {
+
+        elDays.textContent = '00';
+        elHours.textContent = '00';
+        elMinutes.textContent = '00';
+        elSeconds.textContent = '00';
+        message.innerHTML = '<div class="expired">¡La promoción ha finalizado!</div>';
+
+        clearInterval(timer);
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24*3600));
+      const hours = Math.floor((totalSeconds % (24*3600)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      elDays.textContent = pad(days);
+      elHours.textContent = pad(hours);
+      elMinutes.textContent = pad(minutes);
+      elSeconds.textContent = pad(seconds);
+
+      // mensaje accesible / microcopy
+      message.textContent = `Termina el 01/10/2025 a las 00:00.`;
+    }
+
+    // primer update inmediato y luego cada 1s
+    update();
+    const timer = setInterval(update, 1000);

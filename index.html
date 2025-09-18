@@ -18,6 +18,32 @@
     <p id="instrucciones">Luego debajo en "Tu pedido" podrás ver los productos seleccionados y sumar la cantidad que quieras,</p>
     <p id="instrucciones">si deseas agregar un envío a domicilio, marca la opción correspondiente.</p>
     <p id="instrucciones">Cuando hayas terminado, hacé clic en el botón de WhatsApp para enviar tu pedido.</p>
+
+  <div class="wrap" role="region" aria-label="Cuenta regresiva para el descuento">
+    <h2>Descuento especial — ¡aprovechá antes que termine!</h2>
+    <p class="sub">La oferta finaliza el <strong>01/10/2025 a las 00:00</strong>.</p>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="unit">
+        <div class="num" id="days">--</div>
+        <div class="label">Días</div>
+      </div>
+      <div class="unit">
+        <div class="num" id="hours">--</div>
+        <div class="label">Horas</div>
+      </div>
+      <div class="unit">
+        <div class="num" id="minutes">--</div>
+        <div class="label">Minutos</div>
+      </div>
+      <div class="unit">
+        <div class="num" id="seconds">--</div>
+        <div class="label">Segundos</div>
+      </div>
+    </div>
+
+    <div id="message" style="min-height:36px"></div>
+  </div>
   </header>
 
   <div class="productos-grid">
@@ -37,64 +63,71 @@
       <strong>$10.000</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wraps de Pollo', 15500)">
+    <div class="producto" onclick="agregarProducto('Wraps de Pollo', 14500)">
       <img src="polllo.webp" alt="Wrap de Pollo" id="imagen">
       <h3>WRAPS DE POLLO AL VERDEO</h3>
       <p>2 unidades hechos con:</p>
       <p>Pollo, verdeo, crema</p>
-      <strong>$15.500</strong>
+      <s><strong id="rojo">$15.500</strong></s>
+      <strong id="verde">$14.500</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wraps de Carne', 15500)">
+    <div class="producto" onclick="agregarProducto('Wraps de Carne', 14500)">
       <img src="Carne.png" alt="Wrap de Carne" id="imagen">
       <h3>WRAPS DE CARNE</h3>
       <p>2 unidades hechos con:</p>
       <p>Carne vacuna, zanahoria, cebolla y ají</p>
-      <strong>$15.500</strong>
+      <s><strong id="rojo">$15.500</strong></s>
+      <strong id="verde">$14.500</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wraps de Verdura', 13500)">
+    <div class="producto" onclick="agregarProducto('Wraps de Verdura', 11500)">
       <img src="Verdura.png" alt="Wrap de Verdura" id="imagen">
-      <h4 id="novedad">¡NOVEDAD!</h4>
+      <!--<h4 id="novedad">¡NOVEDAD!</h4>-->
       <h3>WRAPS DE VERDURA</h3>
       <p>2 unidades hechos con:</p>
       <p>Champiñones, ajíes, cebolla, queso cremoso, zanahoria y maní tostado</p>
-      <strong>$13.500</strong>
+      <s><strong id="rojo">$13.500</strong></s>
+      <strong id="verde">$11.500</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wraps mixtos', 15500)">
+    <div class="producto" onclick="agregarProducto('Wraps mixtos', 14500)">
       <img src="WrapMixto.png" alt="Wrap de Carne" id="imagen">
       <h3>WRAPS MIXTOS</h3>
       <p>2 unidades hechos con:</p>
       <p>Carne vacuna, zanahoria, cebolla y ají.</p>
       <p>Y otro con:</p>
       <p>Pollo, verdeo, crema</p>
-      <strong>$15.500</strong>
+      <s><strong id="rojo">$15.500</strong></s>
+      <strong id="verde">$14.500</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wrap unidad de Carne', 9000)">
+    <div class="producto" onclick="agregarProducto('Wrap unidad de Carne', 8000)">
       <img src="Carne.png" alt="Wrap de Carne" id="imagen">
       <h3>WRAP DE CARNE UNIDAD</h3>
       <p>1 unidad hecho con:</p>
       <p>Carne vacuna, zanahoria, cebolla y ají.</p>
-      <strong>$9000</strong>
+      <s><strong id="rojo">$9000</strong></s>
+      <strong id="verde">$8000</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wrap unidad de Pollo', 9000)">
+    <div class="producto" onclick="agregarProducto('Wrap unidad de Pollo', 8000)">
       <img src="polllo.webp" alt="Wrap de Pollo" id="imagen">
       <h3>WRAP DE POLLO AL VERDEO UNIDAD</h3>
       <p>1 unidad hecho con:</p>
       <p>Pollo, verdeo, crema</p>
-      <strong>$9000</strong>
+      <s><strong id="rojo">$9000</strong></s>
+      <strong id="verde">$8000</strong>
     </div>
 
-    <div class="producto" onclick="agregarProducto('Wrap unidad de Verdura', 7500)">
+    <div class="producto" onclick="agregarProducto('Wrap unidad de Verdura', 6500)">
       <img src="Verdura.png" alt="Wrap de Verdura" id="imagen">
-      <h4 id="novedad">¡NOVEDAD!</h4>
+      <!--<h4 id="novedad">¡NOVEDAD!</h4>-->
       <h3>WRAP DE VERDURAS UNIDAD</h3>
       <p>1 unidad hecho con:</p>
       <p>Champiñones, ajíes, cebolla, queso cremoso, zanahoria y maní tostado</p>
-      <strong>$7500</strong>
+      <s><strong id="rojo">$7500</strong></s>
+      <strong id="verde">$6500</strong>
     </div>
 
     <div class="producto" onclick="agregarProducto('Salsa de Tomate de 500 ml', 3500)">
