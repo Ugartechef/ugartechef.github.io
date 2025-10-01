@@ -164,7 +164,7 @@
   }
 
 
-    const targetISO = '2025-10-01T00:00:00-03:00';
+  /*  const targetISO = '2025-10-01T00:00:00-03:00';
     const target = new Date(targetISO);
 
     const elDays = document.getElementById('days');
@@ -208,4 +208,4 @@
 
     // primer update inmediato y luego cada 1s
     update();
-    const timer = setInterval(update, 1000);
+    const timer = setInterval(update, 1000); */
