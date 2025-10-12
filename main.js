@@ -58,10 +58,14 @@
     function actualizarLinkWhatsapp() {
       let mensaje = "¡Hola, me gustaría realizar el siguiente encargue!%0A";
       let total = 0;
+      let totalDescontable = 0;
 
       seleccionados.forEach(prod => {
         const subtotal = prod.precio * prod.cantidad;
         total += subtotal;
+        if (!prod.sinDescuento) {
+          totalDescontable += subtotal;
+        }
         mensaje += `${prod.nombre} x${prod.cantidad} - $${subtotal}%0A`;
       });
 
@@ -76,21 +80,15 @@
 
       let totalConDescuento = total;
       if (descuento > 0) {
-        totalConDescuento = Math.round(total * (1 - descuento));
-        mensaje += `%0ADescuento aplicado (${Math.round(descuento * 100)}%): $-${total - totalConDescuento}%0A`;
+        const descuentoAplicado = Math.round(totalDescontable * descuento);
+        totalConDescuento = total - descuentoAplicado;
+        mensaje += `%0ADescuento aplicado (${Math.round(descuento * 100)}%): $-${descuentoAplicado}%0A`;
         mensaje += `Total final: $${totalConDescuento + envio}`;
       } else {
         mensaje += `%0ATotal: $${total + envio}`;
       }
       const whatsappLink = document.getElementById("whatsappLink");
       whatsappLink.href = `https://wa.me/542323354483?text=${mensaje}`;
-
-/*       const lista = seleccionados.map((p, i) => `%0A${i + 1}. ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}`).join("");
-      const total = seleccionados.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
-      const mensaje = mensajeBase + lista + `%0A%0AMuchas gracias!`;
-      const numero = "542323354483";
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
-      document.getElementById("whatsappLink").href = url; */
     }
     
     let descuento = 0;
@@ -120,10 +118,14 @@
     ul.innerHTML = "";
 
     let total = 0;
+    let totalDescontable = 0;
 
     seleccionados.forEach((prod, index) => {
       const subtotal = prod.precio * prod.cantidad;
       total += subtotal;
+      if (!prod.sinDescuento) {
+        totalDescontable += subtotal;
+      }
 
       const li = document.createElement("li");
       li.innerHTML = `
@@ -141,11 +143,9 @@
       envio = 1000;
     }
 
-    
-
     let totalConDescuento = total;
     if (descuento > 0) {
-      totalConDescuento = Math.round(total * (1 - descuento));
+      totalConDescuento = total - Math.round(totalDescontable * descuento);
     }
 
     let totalFinal = totalConDescuento + envio;
@@ -161,6 +161,16 @@
     }
 
     actualizarLinkWhatsapp();
+  }
+
+    function agregarProducto(nombre, precio, sinDescuento = false) {
+    const existente = seleccionados.find(p => p.nombre === nombre);
+    if (existente) {
+      existente.cantidad += 1;
+    } else {
+      seleccionados.push({ nombre, precio, cantidad: 1, sinDescuento });
+    }
+    actualizarLista();
   }
 
 
