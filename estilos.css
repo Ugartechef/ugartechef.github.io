@@ -158,6 +158,14 @@
       color: green;
     }
 
+    .separador {
+      font-family: 'Bebas Neue', sans-serif;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 2px solid #eee;
+      margin: 16px 0;
+    }
+
     .productos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
