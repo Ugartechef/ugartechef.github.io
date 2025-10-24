@@ -177,6 +177,24 @@
 
         <div class="section-title">Nuestros Wraps</div>
 
+        <div class="product-card" data-id="wraps-bondiola">
+            <div class="product-header">
+                <div class="product-name">Wraps de Bondiola x2</div>
+                <div class="product-price">$15.500</div>
+            </div>
+            <div class="product-description">
+                2 unidades • Bondiola, Barbacoa
+            </div>
+            <div class="product-controls">
+                <div class="quantity-controls">
+                    <button class="btn-quantity" onclick="updateQuantity('wraps-bondiola', -1)">−</button>
+                    <div class="quantity-display" id="qty-wraps-bondiola">0</div>
+                    <button class="btn-quantity" onclick="updateQuantity('wraps-bondiola', 1)">+</button>
+                </div>
+                <button class="btn-add" onclick="addToCart('wraps-bondiola')">Agregar</button>
+            </div>
+        </div>
+
         <div class="product-card" data-id="wraps-pollo">
             <div class="product-header">
                 <div class="product-name">Wraps de Pollo x2</div>
@@ -228,6 +246,24 @@
                     <button class="btn-quantity" onclick="updateQuantity('wraps-mixtos', 1)">+</button>
                 </div>
                 <button class="btn-add" onclick="addToCart('wraps-mixtos')">Agregar</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-id="wrap-bondiola-unidad">
+            <div class="product-header">
+                <div class="product-name">Wrap de Bondiola (Unidad)</div>
+                <div class="product-price">$9.000</div>
+            </div>
+            <div class="product-description">
+                1 unidad • Bondiola, Barbacoa
+            </div>
+            <div class="product-controls">
+                <div class="quantity-controls">
+                    <button class="btn-quantity" onclick="updateQuantity('wrap-bondiola-unidad', -1)">−</button>
+                    <div class="quantity-display" id="qty-wrap-bondiola-unidad">0</div>
+                    <button class="btn-quantity" onclick="updateQuantity('wrap-bondiola-unidad', 1)">+</button>
+                </div>
+                <button class="btn-add" onclick="addToCart('wrap-bondiola-unidad')">Agregar</button>
             </div>
         </div>
 
