@@ -433,10 +433,12 @@ body {
 .discount-input-group {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .discount-input {
     flex: 1;
+    min-width: 140px;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -461,6 +463,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-apply-code:active {
