@@ -8,10 +8,12 @@ const products = {
     'wraps-pollo': { name: 'Wraps de Pollo x2', price: 15500 },
     'wraps-carne': { name: 'Wraps de Carne x2', price: 15500 },
     'wraps-bondiola': { name: 'Wraps Bondiola x2', price: 15500 },
+    'wraps-verdura': { name: 'Wraps Verdura x2', price: 13500 },
     'wraps-mixtos': { name: 'Wraps Mixtos x2', price: 15500 },
     'wrap-carne-unidad': { name: 'Wrap de Carne (Unidad)', price: 9000 },
     'wrap-pollo-unidad': { name: 'Wrap de Pollo (Unidad)', price: 9000 },
     'wrap-bondiola-unidad': { name: 'Wrap de Bondiola (Unidad)', price: 9000 },
+    'wrap-verdura-unidad': { name: 'Wrap de Verdura (Unidad)', price: 7500 },
     'salsa-500ml': { name: 'Salsa Casera 500ml', price: 3500 },
     'salsa-250ml': { name: 'Salsa Casera 250ml', price: 1750 }
 };
