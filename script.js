@@ -217,7 +217,6 @@ function sendWhatsApp() {
     
     message += `\n*Total: $${total.toLocaleString('es-AR')}*`;
 
-    // IMPORTANTE: Cambiá este número por tu número de WhatsApp real
     const whatsappUrl = `https://wa.me/542323354483?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }

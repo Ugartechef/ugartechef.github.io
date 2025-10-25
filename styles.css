@@ -48,7 +48,7 @@ body {
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Promociones destacadas */
+
 .promo-banner {
     background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
     border-radius: 20px;
@@ -127,7 +127,6 @@ body {
     font-weight: bold;
 }
 
-/* Product cards */
 .product-card {
     background: white;
     border-radius: 16px;
@@ -340,7 +339,7 @@ body {
 }
 
 .cart-summary:not(.collapsed) .cart-content {
-    max-height: calc(85vh - 56px); /* 56px es el alto del header del carrito */
+    max-height: calc(85vh - 56px);
     height: auto;
 }
 
@@ -595,7 +594,6 @@ body {
     100% { background-position: 1000px 0; }
 }
 
-/* Footer Styles */
 .site-footer {
     background: white;
     padding: 40px 20px 20px;
